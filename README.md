@@ -7,6 +7,8 @@ This project is a simple To-Do List application built with React. It allows user
 
 - Edit Existing Tasks: Seamlessly edit tasks directly in the list to keep your to-do items up to date.
 
+- Mark Tasks as Completed: Toggle the completion status of tasks, helping you track your progress.
+
 - Delete Tasks: Remove completed or unnecessary tasks with a simple delete functionality.
 
 - User-Friendly Alerts: Receive visually appealing alerts for successful actions, such as adding, editing, or deleting tasks.
