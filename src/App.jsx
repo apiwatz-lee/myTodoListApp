@@ -10,14 +10,15 @@ import AddTodo from './components/AddTodo';
 function App() {
   const [todos, setTodos] = useState([])
   const [alert,setAlert] = useState({})
+
   
   const handleAddToDo = (title) => {
-    setTodos([...todos,{id:uuidv4(),task:title,isEditing:false,completed:false}])
+    setTodos([...todos,{id:uuidv4(),task:title,isEditing:false,isCompleted:false}])
     setAlert({title:`Add ${title} successfully`,status:"success"})
   }
 
   const changeStatusToEdit = (editId) => {
-    setTodos(todos.map((todo)=> todo.id === editId ? {...todo,isEditing:true}:todo ))
+    setTodos(todos.map((todo)=> todo.id === editId ? {...todo,isEditing:!todo.isEditing}:todo ))
   }
 
   const handleUpdateTodo = (editTitle,editId,task) => {
@@ -30,13 +31,20 @@ function App() {
     setAlert({title:`Delete ${deleteTask} successfully`,status:"error"})
   }
 
-  console.log('alert', alert)
-
+  const toggleCompletedTodo = (toggleId) => {
+    const changeStatusToCompleted = todos.map((todo)=>todo.id === toggleId ? {...todo,isCompleted:!todo.isCompleted}:todo)
+    setTodos(changeStatusToCompleted)
+    const findTask = changeStatusToCompleted.find((item)=>item.id === toggleId) 
+    findTask.isCompleted ? setAlert({title:`Congratulation`}):setAlert({title:`Keep it up`})
+  }
+  
+ 
   useEffect(()=>{
     setTimeout(()=>{
       setAlert(null)
     },1000)
   },[alert])
+
 
   return (
     <main className='border border-transparent min-h-screen bg-mountain'>
@@ -75,6 +83,8 @@ function App() {
                           id={todo.id}
                           changeStatusToEdit={changeStatusToEdit}
                           handleDeleteTodo={handleDeleteTodo}
+                          toggleCompletedTodo={toggleCompletedTodo}
+                          todo={todo}
                           />
                   )
           })}
