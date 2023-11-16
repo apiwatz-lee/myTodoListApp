@@ -9,7 +9,7 @@ import AddTodo from './components/AddTodo';
 
 function App() {
   const [todos, setTodos] = useState([])
-  const [alert,setAlert] = useState({})
+  const [alert,setAlert] = useState(null)
 
   
   const handleAddToDo = (title) => {
@@ -55,7 +55,7 @@ function App() {
 
       <div className='text-center flex justify-center my-3'>
         {alert  ? 
-                  <p className={`w-64 ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-900 text-white rounded-md'}`}>
+                  <p className={`w-64 ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
                       {alert.title}
                   </p> 
                 : 
