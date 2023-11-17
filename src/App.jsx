@@ -49,18 +49,26 @@ function App() {
   return (
     <main className='border border-transparent min-h-screen bg-mountain'>
 
-      <h1 className="text-3xl font-bold text-center mt-5 text-white">
+      <h1 className="text-3xl font-bold text-center my-5 text-white relative">
          To Do List 
+         <span className='text-center flex justify-center my-3 absolute top-7 right-[600px]'>
+        {alert  ? 
+                  <p className={`w-64 text-sm ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
+                      {alert.title}
+                  </p> 
+                : 
+                  null}
+      </span>
       </h1>
 
-      <div className='text-center flex justify-center my-3'>
+      {/* <span className='text-center flex justify-center my-3 absolute right-50'>
         {alert  ? 
                   <p className={`w-64 ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
                       {alert.title}
                   </p> 
                 : 
                   null}
-      </div>
+      </span> */}
    
       <AddTodo handleAddToDo={handleAddToDo} setAlert={setAlert}/>
 

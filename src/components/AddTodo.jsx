@@ -13,7 +13,7 @@ const AddTodo = ({handleAddToDo,setAlert}) => {
     }
 
     return (
-        <form className='text-center' onSubmit={handleSubmit}>
+        <form className='text-center mt-8' onSubmit={handleSubmit}>
             
             <label htmlFor="todo-input"/>
             
