@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 
 const EditTodo = ({task,handleUpdateTodo,id,setAlert}) => {
+    
     const [title,setTitle] = useState(task)
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if(title === "") return setAlert({title:"Please type some text",status:"error"})
