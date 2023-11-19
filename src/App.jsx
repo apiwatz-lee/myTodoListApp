@@ -47,17 +47,17 @@ function App() {
 
 
   return (
-    <main className='border border-transparent min-h-screen bg-mountain'>
+    <main className='border border-transparent min-h-screen bg-mountain flex flex-col items-center'>
 
-      <div className="text-3xl font-bold text-center my-5 text-white">
-         <h1>To Do List</h1> 
-         <p className='text-center flex justify-center mt-3'>
+      <div className="text-3xl font-bold text-center my-5 text-white relative h-[80px] w-[270px]">
+         <h1 className='mt-2'>To Do List</h1> 
+         <p className='text-center flex justify-center mt-3 absolute'>
         {alert  ? 
-                  <span className={`w-64 text-sm ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
-                      {alert.title}
-                  </span> 
-                : 
-                  null}
+                <span className={`w-64 text-sm ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
+                    {alert.title}
+                </span> 
+              : 
+                null}
       </p>
       </div>
 
