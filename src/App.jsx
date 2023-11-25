@@ -23,7 +23,7 @@ function App() {
 
   const handleUpdateTodo = (editTitle,editId,task) => {
     setTodos(todos.map((todo)=>todo.id === editId ?  {...todo,task:editTitle,isEditing:!todo.isEditing}:todo))
-    setAlert({title:`Edit From ${task} to ${editTitle} successfully`,status:"success"})
+    setAlert({title:`Edit ${task} to ${editTitle} successfully`,status:"success"})
   }
 
   const handleDeleteTodo = (deleteId,deleteTask) => {
