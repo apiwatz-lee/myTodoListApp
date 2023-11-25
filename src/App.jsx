@@ -61,14 +61,6 @@ function App() {
       </p>
       </div>
 
-      {/* <span className='text-center flex justify-center my-3 absolute right-50'>
-        {alert  ? 
-                  <p className={`w-64 ${alert.status === "error" ? 'bg-rose-500 text-white rounded-md':'bg-teal-700 text-white rounded-md'}`}>
-                      {alert.title}
-                  </p> 
-                : 
-                  null}
-      </span> */}
    
       <AddTodo handleAddToDo={handleAddToDo} setAlert={setAlert}/>
 
